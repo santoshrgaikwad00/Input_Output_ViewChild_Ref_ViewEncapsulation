@@ -1,7 +1,15 @@
 <div class="container">
+	<app-cockpit 
+		(serverCreated)="onServerAdded($event)"
+		(blueprintCreated)="onBlueprintAdded($event)"></app-cockpit>
+	<hr>
+
     <div class="row">
         <div class="col-sm-12">
-            <h2>wprking !!!!!!!</h2>
+            <app-server-element 
+            	*ngFor="let serverElement of ServerElements" 
+            	[srvElement]="serverElement" >
+            </app-server-element>
         </div>
     </div>
 </div>
